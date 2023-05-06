@@ -42,4 +42,6 @@ return GeneralConfig::create()
     ->allowAdminChanges(App::env('ALLOW_ADMIN_CHANGES') ?? false)
     // Disallow robots
     ->disallowRobots(App::env('DISALLOW_ROBOTS') ?? false)
+    // Remembered user session duration
+    ->rememberedUserSessionDuration('P1M')
 ;

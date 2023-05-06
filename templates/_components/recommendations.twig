@@ -1,0 +1,13 @@
+{% extends '_components/base.twig' %}
+
+{% set recommendations = craft.entries
+    .section('destinations')
+    .with([
+        ['images', {
+            withTransforms: ['thumb']
+        }]
+    ])
+    .orderBy('RAND()')
+    .limit(3)
+    .all()
+%}

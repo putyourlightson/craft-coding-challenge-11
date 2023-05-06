@@ -1,4 +1,4 @@
-dateModified: 1675559029
+dateModified: 1683414685
 email:
   fromEmail: info@domain.com
   fromName: 'Craft Coding Challenge'
@@ -7,6 +7,14 @@ email:
   transportSettings:
     command: '/usr/sbin/sendmail -bs'
   transportType: craft\mail\transportadapters\Sendmail
+fs:
+  images:
+    hasUrls: true
+    name: Images
+    settings:
+      path: '@webroot/assets/images'
+    type: craft\fs\Local
+    url: /assets/images
 graphql:
   publicToken:
     enabled: false
@@ -14,20 +22,34 @@ graphql:
 meta:
   __names__:
     0d89c679-f6f5-42ae-8341-4bea917c6af7: $CRAFT_SITE_NAME # $CRAFT_SITE_NAME
+    3a520d1b-b605-44aa-8200-d7784b974f5b: Tags # Tags
+    4a74e36f-904e-4c5f-aafe-04db0a6fe71f: Likes # Likes
+    7ecb6c5b-40bf-4fc0-a015-5367a2e9d85b: Tags # Tags
+    95c24f9a-1f75-4390-bcb0-338dec4c5d6e: Default # Default
+    649c9c5a-c95e-489d-9c06-8df52e628f93: Dislikes # Dislikes
     0779f354-f5d2-4f82-9a36-28a252f70ce4: 'Public Schema' # Public Schema
+    858c43d9-04c3-4a37-865f-ff5ad2d4e8e8: Thumb # Thumb
     31006d4c-2f40-498c-9a4c-69cff4fd4279: Common # Common
+    587357c8-2262-4666-9705-2f0b84385392: Destinations # Destinations
+    bdc98c9f-a066-45ba-89bd-6b5a5da7ae74: Images # Images
+    bf91aaf1-1e7d-46e2-b008-347b1922d419: Default # Default
     c7c2807b-84cc-4e1f-9279-af044bc0b472: 'Public Schema' # Public Schema
+    c77a98f6-d4a2-4935-a4cf-201a26cbe8c3: Full # Full
+    dcc6c87b-20a8-4fc8-847d-51fd4e86314d: Images # Images
     f255ef6d-0c55-4bdc-9ced-f610bbb3bed6: $CRAFT_SITE_NAME # $CRAFT_SITE_NAME
+plugins:
+  elements-panel:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  sprig:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.1
 system:
   edition: pro
   live: true
   name: $CRAFT_SITE_NAME
   retryDuration: null
-  schemaVersion: 4.0.0.9
+  schemaVersion: 4.4.0.4
   timeZone: America/Los_Angeles
-users:
-  allowPublicRegistration: false
-  defaultGroup: null
-  photoSubpath: null
-  photoVolumeUid: null
-  requireEmailVerification: true

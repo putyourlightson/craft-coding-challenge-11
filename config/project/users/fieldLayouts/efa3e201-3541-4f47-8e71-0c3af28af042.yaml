@@ -1,0 +1,31 @@
+tabs:
+  -
+    elementCondition: null
+    elements:
+      -
+        elementCondition: null
+        fieldUid: 4a74e36f-904e-4c5f-aafe-04db0a6fe71f # Likes
+        instructions: null
+        label: null
+        required: false
+        tip: null
+        type: craft\fieldlayoutelements\CustomField
+        uid: 65552c99-e03e-4325-8ae1-7842d1e20c91
+        userCondition: null
+        warning: null
+        width: 100
+      -
+        elementCondition: null
+        fieldUid: 649c9c5a-c95e-489d-9c06-8df52e628f93 # Dislikes
+        instructions: null
+        label: null
+        required: false
+        tip: null
+        type: craft\fieldlayoutelements\CustomField
+        uid: 4bc1c352-6843-429d-b811-c6f740d26297
+        userCondition: null
+        warning: null
+        width: 100
+    name: Content
+    uid: d4d39176-6fae-4bf2-804f-b03e0be329f1
+    userCondition: null
