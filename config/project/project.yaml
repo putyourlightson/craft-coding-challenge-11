@@ -1,4 +1,33 @@
-dateModified: 1683414685
+dateModified: 1683422089
+elementSources:
+  craft\elements\Entry:
+    -
+      defaultSort:
+        - postDate
+        - desc
+      disabled: false
+      key: 'section:587357c8-2262-4666-9705-2f0b84385392' # Destinations
+      tableAttributes:
+        - 'field:3a520d1b-b605-44aa-8200-d7784b974f5b' # Tags
+        - 'field:dcc6c87b-20a8-4fc8-847d-51fd4e86314d' # Images
+      type: native
+    -
+      defaultSort:
+        - postDate
+        - desc
+      disabled: false
+      key: 'section:7ecb6c5b-40bf-4fc0-a015-5367a2e9d85b' # Tags
+      tableAttributes: '-'
+      type: native
+    -
+      defaultSort:
+        - postDate
+        - desc
+      disabled: false
+      key: '*'
+      tableAttributes:
+        - section
+      type: native
 email:
   fromEmail: info@domain.com
   fromName: 'Craft Coding Challenge'

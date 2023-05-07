@@ -2,6 +2,7 @@
   "require": {
     "craftcms/cms": "^4.4",
     "nystudio107/craft-closure": "^1.0",
+    "nystudio107/craft-cookies": "^4.0",
     "putyourlightson/craft-elements-panel": "^2.0",
     "putyourlightson/craft-sprig": "^2.0",
     "vlucas/phpdotenv": "^5.4.0"

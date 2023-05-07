@@ -1,7 +1,47 @@
 {% extends '_components/base.twig' %}
 
+{% set likes = craft.app.request.cookies.getValue('likes') ?? [] %}
+{% set dislikes = craft.app.request.cookies.getValue('dislikes') ?: [] %}
+
+{% set restart = restart ?? false %}
+{% if restart %}
+    {% do craft.app.response.cookies.remove(create({
+        class: 'yii\\web\\cookie',
+        name: 'likes',
+    })) %}
+    {% do craft.app.response.cookies.remove(create({
+        class: 'yii\\web\\cookie',
+        name: 'dislikes',
+    })) %}
+    {% set likes = [] %}
+    {% set dislikes = [] %}
+{% endif %}
+
+{% set like = like ?? null %}
+{% if like and like not in likes %}
+    {% set likes = likes|push(like) %}
+    {% do craft.app.response.cookies.add(create({
+        class: 'yii\\web\\cookie',
+        name: 'likes',
+        value: likes,
+    })) %}
+{% endif %}
+
+{% set dislike = dislike ?? null %}
+{% if dislike and dislike not in dislikes %}
+    {% set dislikes = dislikes|push(dislike) %}
+    {% do craft.app.response.cookies.add(create({
+        class: 'yii\\web\\cookie',
+        name: 'dislikes',
+        value: dislikes,
+    })) %}
+{% endif %}
+
+{# --- Your solution should go below this comment. --- #}
+
 {% set recommendations = craft.entries
     .section('destinations')
+    .id(['not']|merge(dislikes))
     .with([
         ['images', {
             withTransforms: ['thumb']
