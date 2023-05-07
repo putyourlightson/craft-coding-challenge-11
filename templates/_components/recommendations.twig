@@ -5,11 +5,6 @@
 {% set recommendations = craft.entries
     .section('destinations')
     .id(['not']|merge(dislikeIds))
-    .with([
-        ['images', {
-            withTransforms: ['thumb']
-        }]
-    ])
     .orderBy('RAND()')
     .limit(3)
     .all()

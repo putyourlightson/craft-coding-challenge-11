@@ -1,4 +1,4 @@
-dateModified: 1683478898
+dateModified: 1683481910
 elementSources:
   craft\elements\Entry:
     -
@@ -55,13 +55,13 @@ meta:
     7ecb6c5b-40bf-4fc0-a015-5367a2e9d85b: Tags # Tags
     95c24f9a-1f75-4390-bcb0-338dec4c5d6e: Default # Default
     0779f354-f5d2-4f82-9a36-28a252f70ce4: 'Public Schema' # Public Schema
-    858c43d9-04c3-4a37-865f-ff5ad2d4e8e8: Thumb # Thumb
+    858c43d9-04c3-4a37-865f-ff5ad2d4e8e8: Small # Small
     31006d4c-2f40-498c-9a4c-69cff4fd4279: Common # Common
     587357c8-2262-4666-9705-2f0b84385392: Destinations # Destinations
     bdc98c9f-a066-45ba-89bd-6b5a5da7ae74: Images # Images
     bf91aaf1-1e7d-46e2-b008-347b1922d419: Default # Default
     c7c2807b-84cc-4e1f-9279-af044bc0b472: 'Public Schema' # Public Schema
-    c77a98f6-d4a2-4935-a4cf-201a26cbe8c3: Full # Full
+    c77a98f6-d4a2-4935-a4cf-201a26cbe8c3: Large # Large
     dcc6c87b-20a8-4fc8-847d-51fd4e86314d: Images # Images
     f255ef6d-0c55-4bdc-9ced-f610bbb3bed6: $CRAFT_SITE_NAME # $CRAFT_SITE_NAME
 plugins:

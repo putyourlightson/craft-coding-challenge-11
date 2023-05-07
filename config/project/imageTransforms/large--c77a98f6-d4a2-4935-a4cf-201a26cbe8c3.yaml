@@ -1,11 +1,11 @@
 fill: null
 format: null
-handle: thumb
-height: 200
+handle: large
+height: 700
 interlace: none
 mode: crop
-name: Thumb
+name: Large
 position: center-center
 quality: null
 upscale: true
-width: 350
+width: 1200
