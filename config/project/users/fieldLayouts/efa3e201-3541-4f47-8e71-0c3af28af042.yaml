@@ -4,7 +4,7 @@ tabs:
     elements:
       -
         elementCondition: null
-        fieldUid: 4a74e36f-904e-4c5f-aafe-04db0a6fe71f # Likes
+        fieldUid: 4a74e36f-904e-4c5f-aafe-04db0a6fe71f
         instructions: null
         label: null
         required: false
@@ -16,7 +16,7 @@ tabs:
         width: 100
       -
         elementCondition: null
-        fieldUid: 649c9c5a-c95e-489d-9c06-8df52e628f93 # Dislikes
+        fieldUid: 649c9c5a-c95e-489d-9c06-8df52e628f93
         instructions: null
         label: null
         required: false

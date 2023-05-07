@@ -2,7 +2,7 @@ columnSuffix: null
 contentColumnType: string
 fieldGroup: 31006d4c-2f40-498c-9a4c-69cff4fd4279 # Common
 handle: tags
-instructions: 'Be sure to order the tags appropriately as the first tag gets the most weight and the last tag gets the least weight.'
+instructions: 'Up to weighted 5 tags that describe the destination. The first tag gets the most weight and the last tag gets the least weight.'
 name: Tags
 searchable: false
 settings:
