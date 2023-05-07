@@ -1,11 +1,11 @@
-{% set pass = pass ?? null %}
-{% set excludeDestinationIds = likes
-    |merge(dislikes)
-    |merge(pass ? [pass] : [])
+{% set excludeIdCondition = ['not']
+    |merge(likeIds)
+    |merge(dislikeIds)
+    |merge(pass is defined ? [pass] : [])
 %}
 {% set entry = craft.entries
     .section('destinations')
-    .id(['not']|merge(excludeDestinationIds))
+    .id(excludeIdCondition)
     .with([
         ['images', {
             withTransforms: ['full']
@@ -18,7 +18,7 @@
 <div class="max-w-3xl mx-auto my-6 space-y-3 text-center">
 {% if entry %}
         {% set image = entry.images.random %}
-        <img src="{{ image.getUrl('full') }}" alt="An undisclosed destination" width="{{ image.getWidth('full') }}" height="{{ image.getHeight('full') }}">
+        <img src="{{ image.getUrl('full') }}" width="{{ image.getWidth('full') }}" height="{{ image.getHeight('full') }}" class="rounded-lg">
         <div class="text-2xl">
             Would you like to visit this destination?
         </div>
@@ -41,8 +41,6 @@
                 </svg>
                 I don’t know (pass)
             </button>
-            {% if errors is defined %}{{ dump(errors) }}{% endif %}
-            {% if error is defined %}{{ error }}{% endif %}
         </div>
     {% else %}
         <div class="text-2xl">
@@ -57,7 +55,7 @@
             </button>
         </div>
     {% endif %}
-    <div class="pt-10 text-2xl">
+    <div class="pt-5 text-2xl">
         Our recommendations (based on your preferences):
     </div>
     <div>
@@ -65,9 +63,9 @@
             {% for entry in recommendations %}
                 <div class="w-1/3 space-y-2">
                     {% set image = entry.images.first %}
-                    <img src="{{ image.getUrl('thumb') }}" alt="{{ entry.title }}">
+                    <img src="{{ image.getUrl('thumb') }}" alt="{{ entry.title }}" class="rounded-lg">
                     <div>
-                        {{ entry.title }}
+                        {{ loop.index }}. {{ entry.title }}
                     </div>
                 </div>
             {% endfor %}
