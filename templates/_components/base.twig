@@ -63,7 +63,7 @@
             {% for entry in recommendations %}
                 <div class="w-1/3 space-y-2">
                     {% set image = entry.images.one() %}
-                    <img src="{{ image.getUrl('small') }}" alt="{{ entry.title }}" class="rounded-lg">
+                    <img src="{{ image.getUrl('small') }}" width="{{ image.getWidth('small') }}" height="{{ image.getHeight('small') }}" alt="{{ entry.title }}" class="rounded-lg">
                     <div>
                         {{ loop.index }}. {{ entry.title }}
                     </div>
