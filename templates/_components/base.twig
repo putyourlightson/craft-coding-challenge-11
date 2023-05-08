@@ -7,6 +7,7 @@
     .section('destinations')
     .id(excludeIdCondition)
     .with([
+        'tags',
         ['images', {
             withTransforms: ['large']
         }]
@@ -16,9 +17,10 @@
 %}
 
 <div class="px-4 md:px-0 max-w-3xl mx-auto my-6 space-y-3 text-center">
-{% if entry %}
-        {% set image = entry.images.random %}
-        <img src="{{ image.getUrl('large') }}" width="{{ image.getWidth('large') }}" height="{{ image.getHeight('large') }}" class="rounded-lg">
+    {% if entry %}
+        {% set image = entry.images.collect().random %}
+        {% set tags = entry.tags.collect().pluck('title').implode(', ') %}
+        <img src="{{ image.getUrl('large') }}" width="{{ image.getWidth('large') }}" height="{{ image.getHeight('large') }}" title="{{ tags }}" class="rounded-lg">
         <div class="text-2xl">
             Would you like to visit this destination?
         </div>
@@ -65,7 +67,8 @@
             {% for entry in recommendations %}
                 <div class="w-1/3 space-y-2">
                     {% set image = entry.images.one() %}
-                    <img src="{{ image.getUrl('small') }}" width="{{ image.getWidth('small') }}" height="{{ image.getHeight('small') }}" alt="{{ entry.title }}" class="rounded-lg">
+                    {% set tags = entry.tags.collect().pluck('title').implode(', ') %}
+                    <img src="{{ image.getUrl('small') }}" width="{{ image.getWidth('small') }}" height="{{ image.getHeight('small') }}" alt="{{ entry.title }}" title="{{ tags }}" class="rounded-lg">
                     <div>
                         {{ loop.index }}. {{ entry.title }}
                     </div>
